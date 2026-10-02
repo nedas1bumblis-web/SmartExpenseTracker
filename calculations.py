@@ -2,6 +2,8 @@ import pandas as pd
 
 
 def expense_calculator(raw_data:list[dict]):
+    if not raw_data :
+        return {"message": "No expenses to report"}
     expense_categories = pd.DataFrame(raw_data)
     grand_total = expense_categories["amount"].sum()
     expense_sums = expense_categories.groupby('category')['amount'].sum()

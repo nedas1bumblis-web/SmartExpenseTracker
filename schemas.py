@@ -35,3 +35,11 @@ class ExpenseFilter(BaseModel):
 class AccountCreate(BaseModel):
     user_id:int
     balance:decimal.Decimal
+
+class CreateUserRequest(BaseModel):
+    username:str
+    password:str
+
+class Token(BaseModel):
+    access_token:str
+    token_type:str
